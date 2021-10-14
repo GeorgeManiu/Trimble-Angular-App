@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +8,13 @@ import { TestModule } from './test/test.module';
 import { TemaModule } from './tema/tema.module';
 import { NoteComponent } from './note/note.component';
 import { ToolsComponent } from './tools/tools.component';
+import {MatButtonModule } from '@angular/material/button';
+import { MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,14 @@ import { ToolsComponent } from './tools/tools.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     TestModule,
-    TemaModule
+    TemaModule,
+    MatButtonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

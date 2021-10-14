@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-tools',
   templateUrl: './tools.component.html',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolsComponent implements OnInit {
 
+ title: string = "Something";
+ textColor: string = "red";
+ noteContent: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  buttonClick(): void {
+  alert("Button click");
+  this.title = "Something else";
+  this.textColor = "blue";   
+}
 }
