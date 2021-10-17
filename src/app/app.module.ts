@@ -13,6 +13,7 @@ import { MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { AddPipe } from './add.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     Curs3Component,
     NoteComponent,
     ToolsComponent,
+    AddPipe,
   ],
   imports: [
     BrowserModule,

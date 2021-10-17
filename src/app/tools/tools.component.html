@@ -4,7 +4,9 @@
 <mat-form-field>
     <input matInput placeholder="Add Note" [(ngModel)]= noteContent >
 </mat-form-field>
-<button mat-icon-button (click) = "buttonClick()">
+<p>Number is: {{2|add:4}}</p>
+<p>Date is {{currentDate | date : 'shortDate'}}</p>
+<button mat-icon-button (click) = "buttonClick(noteContent)">
      <mat-icon>add</mat-icon>
 </button>
 

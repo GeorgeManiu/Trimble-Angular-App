@@ -12,15 +12,15 @@ export class ToolsComponent implements OnInit {
  title: string = "Something";
  textColor: string = "red";
  noteContent: string = "";
+ currentDate= Date.now();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  buttonClick(): void {
-  alert("Button click");
-  this.title = "Something else";
-  this.textColor = "blue";   
-}
+  buttonClick(textColor: string): void {
+  this.textColor = textColor;
+    
+  }
 }
