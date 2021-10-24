@@ -1,45 +1,54 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Curs3Component } from './curs3/curs3.component';
-import { TestModule } from './test/test.module';
-import { TemaModule } from './tema/tema.module';
 import { NoteComponent } from './note/note.component';
 import { ToolsComponent } from './tools/tools.component';
-import {MatButtonModule } from '@angular/material/button';
-import { MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import { MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
-import { AddPipe } from './add.pipe';
-
-
+import { FilterComponent } from './filter/filter.component';
+import { MatCardModule } from '@angular/material/card';
+import { AddNoteComponent } from './add-note/add-note.component';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpMockApiInterceptor } from './services/http-mock-api.interceptor';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Curs3Component,
     NoteComponent,
     ToolsComponent,
-    AddPipe,
+    FilterComponent,
+    AddNoteComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
-    TestModule,
-    TemaModule,
+    AppRoutingModule,
     MatButtonModule,
     MatIconModule,
-    MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
-
+    MatCardModule,
+    HttpClientModule,
+    MatSelectModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpMockApiInterceptor,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

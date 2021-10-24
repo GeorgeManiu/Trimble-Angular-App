@@ -1,12 +1,13 @@
-<p>Note Content is: {{noteContent}}</p>
+<!-- <p>Note Content is: {{noteContent}}</p>
 <p [style.color]="textColor">The title is {{title}}</p>
-<p>tools works!</p>
-<mat-form-field>
+<p>tools works!</p> 
+<mat-form-field>  
     <input matInput placeholder="Add Note" [(ngModel)]= noteContent >
-</mat-form-field>
+</mat-form-field> 
 <p>Number is: {{2|add:4}}</p>
-<p>Date is {{currentDate | date : 'shortDate'}}</p>
-<button mat-icon-button (click) = "buttonClick(noteContent)">
-     <mat-icon>add</mat-icon>
-</button>
-
+<p>Date is {{currentDate | date : 'shortDate'}}</p> -->
+<mat-card class="add-note-card">
+<!-- <button mat-icon-button (click) = "buttonClick(noteContent)"><mat-icon>add</mat-icon></button> -->
+<button mat-icon-button routerLink="add-note"><mat-icon>add</mat-icon></button>
+ </mat-card>
+ 

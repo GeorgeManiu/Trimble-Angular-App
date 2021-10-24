@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -14,13 +15,16 @@ export class ToolsComponent implements OnInit {
  noteContent: string = "";
  currentDate= Date.now();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  buttonClick(textColor: string): void {
-  this.textColor = textColor;
-    
-  }
+  // buttonClick(textColor: string): void {
+  // this.textColor = textColor;
+
+  // addNote(): void{
+  //   this.router.navigateByUrl('\addnote');
+  // }
+  setTitle() { this.title = 'test'; }
 }

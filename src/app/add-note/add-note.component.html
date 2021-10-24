@@ -1,16 +1,26 @@
-<h1>Add a note </h1>
-<form class="add-note-form">
+<div class="add-note">
+  <h1>Add a note</h1>
+  <form class="add-note-form">
     <mat-form-field>
-    <label>Title</label>
-    <input
-        matInput
-        name="inputNote"
-         />
+      <input matInput name="noteName" [(ngModel)]="title" />
     </mat-form-field>
-  <mat-form-field>
-    <label>Description</label>
-    <textarea matInput  name="inputNote" ></textarea>
+    <mat-form-field>
+      <textarea
+        matInput
+        name="noteDescription"
+        placeholder="Note description"
+        [(ngModel)]="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Choose a category </mat-label>
+      <mat-select *ngIf="categories" [(ngModel)]="idCategoryNote">
+          <mat-option *ngFor="let categ of categories" [value]="categ.id">{{categ.name}}</mat-option>
+      </mat-select>
   </mat-form-field>
-  <button mat-button>Add</button>
-</form>
+
+  </form>
+  <button mat-raised-button (click)="add()">Add</button>
+</div>
   
