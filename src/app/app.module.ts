@@ -15,8 +15,7 @@ import { FilterComponent } from './filter/filter.component';
 import { MatCardModule } from '@angular/material/card';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpMockApiInterceptor } from './services/http-mock-api.interceptor';
+import { HttpClientModule} from '@angular/common/http';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -42,13 +41,7 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     MatSelectModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpMockApiInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

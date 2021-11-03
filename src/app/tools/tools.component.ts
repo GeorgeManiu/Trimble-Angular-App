@@ -23,8 +23,8 @@ export class ToolsComponent implements OnInit {
   // buttonClick(textColor: string): void {
   // this.textColor = textColor;
 
-  // addNote(): void{
-  //   this.router.navigateByUrl('\addnote');
-  // }
+   addNote(): void{
+     this.router.navigateByUrl('/addnote');
+   }
   setTitle() { this.title = 'test'; }
 }

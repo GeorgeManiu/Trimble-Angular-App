@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class NoteService {
-  readonly baseUrl = 'https://localhost:4200';
+  readonly baseUrl = 'https://localhost:44328';
   readonly httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -31,8 +31,7 @@ export class NoteService {
   getFilteredNotes(categoryId: string): Observable<Note[]> {
     return this.httpClient
       .get<Note[]>(this.baseUrl + '/notes', this.httpOptions)
-      .pipe(
-        map((notes) => notes.filter((note) => note.categoryId === categoryId))
+      .pipe(map((notes) => notes.filter((note) => note.categoryId === categoryId))
       );
   }
 
@@ -43,10 +42,10 @@ export class NoteService {
       categoryId: noteCategoryId
     }
 
-    return this.httpClient.post(this.baseUrl+'/note', note).subscribe();
+    return this.httpClient.post(this.baseUrl+'/notes', note).subscribe();
   }
 
   deleteNote(id: string) {
-    return this.httpClient.delete(this.baseUrl + '/note/' + id).subscribe();
+    return this.httpClient.delete(this.baseUrl + '/notes/' + id).subscribe();
   }
 }
