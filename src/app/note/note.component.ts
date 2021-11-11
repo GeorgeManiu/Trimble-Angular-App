@@ -30,7 +30,11 @@ ngOnChanges() {
     this.noteService.getFilteredNotes(this.selectedCategoryId).subscribe((result) => {
       this.notes = result;
     })
-    //this.notes = this.noteService.getFilteredNotes(this.selectedCategoryId);
+  }
+  else {
+    this.noteService.getNotes().subscribe((result) => {
+      this.notes = result;
+    })
   }
 }
 
